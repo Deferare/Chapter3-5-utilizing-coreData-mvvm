@@ -14,6 +14,7 @@ class MainViewController: UIViewController {
         
         view.addSubview(
             VStackView(spacing: 30, ([
+                UIImageView(image: UIImage(named: "scc-og")),
                 createButton("알림 확인하기") {
                     let todoVC = TodoViewController()
                     self.navigationController?.pushViewController(todoVC, animated: true)
@@ -22,7 +23,7 @@ class MainViewController: UIViewController {
                     let todoCompletedVC = TodoCompletedViewController()
                     self.navigationController?.pushViewController(todoCompletedVC, animated: true)
                 },
-                createButton("ProfileDesignViewController") {
+                createButton("My Profile") {
                     let profileVC = ProfileDesignViewController()
                     profileVC.modalPresentationStyle = .fullScreen
                     self.present(profileVC, animated: true)
@@ -41,7 +42,7 @@ class MainViewController: UIViewController {
     }
 }
 
-//MARK: -
+//MARK: - Views
 extension MainViewController {
     private func createButton(_ title: String, action: @escaping () -> ()) -> UIButton {
         let button = UIButton(primaryAction: UIAction(handler: { _ in
