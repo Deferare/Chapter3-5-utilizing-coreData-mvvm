@@ -23,10 +23,10 @@ class MainViewController: UIViewController {
                     let todoCompletedVC = TodoCompletedViewController()
                     self.navigationController?.pushViewController(todoCompletedVC, animated: true)
                 },
-                createButton("My Profile") {
+                createButton("내 프로필") {
                     let profileVC = ProfileDesignViewController()
-                    profileVC.modalPresentationStyle = .fullScreen
-                    self.present(profileVC, animated: true)
+                    profileVC.data = Profile.getTestData()
+                    self.navigationController?.pushViewController(profileVC, animated: true)
                 },
             ]))
         )
@@ -35,6 +35,10 @@ class MainViewController: UIViewController {
             view.subviews.first!.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             view.subviews.first!.centerYAnchor.constraint(equalTo: view.centerYAnchor),
         ])
+        
+        self.navigationController?.navigationBar.tintColor = .label
+        navigationItem.title = ""
+        view.backgroundColor = .systemBackground
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,6 +60,6 @@ extension MainViewController {
 @available(iOS 17, *)
 #Preview("", traits: .defaultLayout) {
     let mainNavi = UINavigationController(rootViewController: MainViewController())
-    
+    mainNavi.isNavigationBarHidden = false
     return mainNavi
 }

@@ -19,6 +19,7 @@
 		E034353A2B6307BE00767007 /* ProfileDesignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03435392B6307BE00767007 /* ProfileDesignViewController.swift */; };
 		E034353E2B6308C000767007 /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E034353D2B6308C000767007 /* TodoViewController.swift */; };
 		E03435402B6308E200767007 /* TodoCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E034353F2B6308E200767007 /* TodoCompletedViewController.swift */; };
+		E03435442B6313BD00767007 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03435432B6313BD00767007 /* Profile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		E03435392B6307BE00767007 /* ProfileDesignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDesignViewController.swift; sourceTree = "<group>"; };
 		E034353D2B6308C000767007 /* TodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
 		E034353F2B6308E200767007 /* TodoCompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCompletedViewController.swift; sourceTree = "<group>"; };
+		E03435432B6313BD00767007 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +98,8 @@
 		E03435382B63079B00767007 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				E03435392B6307BE00767007 /* ProfileDesignViewController.swift */,
+				E03435412B63138100767007 /* Models */,
+				E03435422B63138D00767007 /* Views */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -115,6 +118,22 @@
 				E034353F2B6308E200767007 /* TodoCompletedViewController.swift */,
 			);
 			path = TodoCompleted;
+			sourceTree = "<group>";
+		};
+		E03435412B63138100767007 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E03435432B6313BD00767007 /* Profile.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E03435422B63138D00767007 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E03435392B6307BE00767007 /* ProfileDesignViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +214,7 @@
 				E03435372B6302A600767007 /* VStackView.swift in Sources */,
 				E03435402B6308E200767007 /* TodoCompletedViewController.swift in Sources */,
 				E03435252B6301DD00767007 /* utilizing_coreData_mvvm.xcdatamodeld in Sources */,
+				E03435442B6313BD00767007 /* Profile.swift in Sources */,
 				E03435352B6302A600767007 /* HStackView.swift in Sources */,
 				E034351D2B6301DD00767007 /* SceneDelegate.swift in Sources */,
 			);
