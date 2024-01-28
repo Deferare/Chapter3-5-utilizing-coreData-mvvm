@@ -14,11 +14,12 @@ class ProfileDesignViewController: UIViewController {
         super.viewDidLoad()
 
         let headerView = createHeaderView()
+        let bioView = createBioView()
         
         view.addSubview(
             VStackView([
                 headerView,
-                
+                bioView,
             ])
         )
         
@@ -30,6 +31,8 @@ class ProfileDesignViewController: UIViewController {
             view.subviews.first!.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -28),
             headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            bioView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -28),
+            bioView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
         ])
     }
 }
@@ -80,8 +83,42 @@ extension ProfileDesignViewController {
             infoView("following", data?.followingNumber ?? 0),
         ])
     }
+    
+    private func createBioView() -> UIView {
+        let nameLabel: UILabel = {
+            if data?.name == nil { return UILabel() }
+            let nameLabel: UILabel = UILabel()
+            nameLabel.font = .systemFont(ofSize: 14, weight: .bold)
+            nameLabel.textColor = UIColor(red: 0.145, green: 0.145, blue: 0.145, alpha: 1)
+            nameLabel.text = data?.name
+            return nameLabel
+        }()
+        
+        let bioLabel: UILabel = {
+            if data?.bio == nil { return UILabel() }
+            let bioLabel: UILabel = UILabel()
+            bioLabel.font = .systemFont(ofSize: 14, weight: .regular)
+            bioLabel.textColor = UIColor(red: 0.145, green: 0.145, blue: 0.145, alpha: 1)
+            bioLabel.text = data?.bio
+            return bioLabel
+        }()
+        
+        let linkLabel: UILabel = {
+            if data?.linkInBio == nil { return UILabel() }
+            let linkLabel: UILabel = UILabel()
+            linkLabel.font = .systemFont(ofSize: 14, weight: .regular)
+            linkLabel.textColor = UIColor(red: 0.061, green: 0.274, blue: 0.492, alpha: 1)
+            linkLabel.text = data?.linkInBio
+            return linkLabel
+        }()
+        
+        return VStackView(spacing: 2, alignment: .leading,[
+            nameLabel,
+            bioLabel,
+            linkLabel,
+        ])
+    }
 }
-
 
 //MARK: - Actions
 extension ProfileDesignViewController {
