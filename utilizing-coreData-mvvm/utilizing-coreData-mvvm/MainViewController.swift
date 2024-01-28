@@ -8,6 +8,7 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +38,7 @@ class MainViewController: UIViewController {
         ])
         
         self.navigationController?.navigationBar.tintColor = .label
-        navigationItem.title = ""
+        self.title = ""
         view.backgroundColor = .systemBackground
     }
     

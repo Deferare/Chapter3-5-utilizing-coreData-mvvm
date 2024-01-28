@@ -20,6 +20,7 @@
 		E034353E2B6308C000767007 /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E034353D2B6308C000767007 /* TodoViewController.swift */; };
 		E03435402B6308E200767007 /* TodoCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E034353F2B6308E200767007 /* TodoCompletedViewController.swift */; };
 		E03435442B6313BD00767007 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03435432B6313BD00767007 /* Profile.swift */; };
+		E0CD21F12B66FACA00EB9679 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CD21F02B66FACA00EB9679 /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		E034353D2B6308C000767007 /* TodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
 		E034353F2B6308E200767007 /* TodoCompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCompletedViewController.swift; sourceTree = "<group>"; };
 		E03435432B6313BD00767007 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		E0CD21F02B66FACA00EB9679 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				E034351C2B6301DD00767007 /* SceneDelegate.swift */,
 				E03435312B63029700767007 /* Helpers */,
 				E034351E2B6301DD00767007 /* MainViewController.swift */,
+				E0CD21F02B66FACA00EB9679 /* MainViewModel.swift */,
 				E034353B2B63086000767007 /* Todo */,
 				E034353C2B63086D00767007 /* TodoCompleted */,
 				E03435382B63079B00767007 /* Profile */,
@@ -217,6 +220,7 @@
 				E03435442B6313BD00767007 /* Profile.swift in Sources */,
 				E03435352B6302A600767007 /* HStackView.swift in Sources */,
 				E034351D2B6301DD00767007 /* SceneDelegate.swift in Sources */,
+				E0CD21F12B66FACA00EB9679 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
