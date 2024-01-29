@@ -12,18 +12,22 @@ class ProfileDesignViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        setUpNeviBar()
+        
         let headerView = createHeaderView()
         let bioView = createBioView()
+        let middleBar = createMiddleBar()
         
         view.addSubview(
-            VStackView([
+            VStackView(spacing: 14, [
                 headerView,
                 bioView,
+                middleBar
             ])
         )
         
-        setUpNeviBar()
+        
         
         NSLayoutConstraint.activate([
             view.subviews.first!.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 14),
@@ -33,6 +37,8 @@ class ProfileDesignViewController: UIViewController {
             headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             bioView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -28),
             bioView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            middleBar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            middleBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
         ])
     }
 }
@@ -84,7 +90,7 @@ extension ProfileDesignViewController {
         ])
     }
     
-    private func createBioView() -> UIView {
+    private func createBioView() -> VStackView {
         let nameLabel: UILabel = {
             if data?.name == nil { return UILabel() }
             let nameLabel: UILabel = UILabel()
@@ -118,6 +124,59 @@ extension ProfileDesignViewController {
             linkLabel,
         ])
     }
+    
+    private func createMiddleBar() -> HStackView {
+        let followButton: UIButton = {
+            let button = UIButton(primaryAction: .init(handler: { action in
+                
+            }))
+            button.titleLabel?.font = .systemFont(ofSize: 14, weight: .bold)
+            button.tintColor = .white
+            button.setTitle("Follow", for: .normal)
+            button.backgroundColor = UIColor(red: 0.22, green: 0.596, blue: 0.953, alpha: 1)
+            button.layer.cornerRadius = 4
+            return button
+        }()
+        
+        let messageButton: UIButton = {
+            let button = UIButton(primaryAction: .init(handler: { action in
+                
+            }))
+            button.titleLabel?.font = .systemFont(ofSize: 14, weight: .bold)
+            button.tintColor = .black
+            button.setTitle("Message", for: .normal)
+            button.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+            button.layer.borderColor = UIColor(red: 0.855, green: 0.855, blue: 0.855, alpha: 1).cgColor
+            button.layer.borderWidth = 1.5
+            button.layer.cornerRadius = 4
+            return button
+        }()
+        
+        let moreButton: UIButton = {
+            let button = UIButton(primaryAction: .init(handler: { action in
+                
+            }))
+            button.titleLabel?.font = .systemFont(ofSize: 14, weight: .bold)
+            button.tintColor = .black
+            button.setTitle("M", for: .normal)
+            button.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+            button.layer.borderColor = UIColor(red: 0.855, green: 0.855, blue: 0.855, alpha: 1).cgColor
+            button.layer.borderWidth = 1.5
+            button.layer.cornerRadius = 4
+            button.widthAnchor.constraint(equalToConstant: 30).isActive = true
+            button.heightAnchor.constraint(equalToConstant: 30).isActive = true
+            
+            return button
+        }()
+        
+        return HStackView(spacing: 8, alignment: .fill, distribution: .fill ,[
+            HStackView(spacing: 8, alignment: .fill, distribution: .fillEqually ,[
+               followButton,
+               messageButton,
+            ]),
+           moreButton
+        ])
+    }
 }
 
 //MARK: - Actions
@@ -127,6 +186,13 @@ extension ProfileDesignViewController {
         print("tapped")
     }
 }
+
+
+
+
+
+
+
 
 @available(iOS 17, *)
 #Preview("", traits: .defaultLayout) {
