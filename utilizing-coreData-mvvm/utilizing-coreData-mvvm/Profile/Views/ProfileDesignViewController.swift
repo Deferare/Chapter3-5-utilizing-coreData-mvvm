@@ -19,6 +19,7 @@ class ProfileDesignViewController: UIViewController {
         let bioView = createBioView()
         let middleBar = createMiddleBar()
         let divider = createDivider()
+        let galleryNav = createGalleryNav()
         
         view.addSubview(
             VStackView(spacing: 14, [
@@ -26,6 +27,7 @@ class ProfileDesignViewController: UIViewController {
                 bioView,
                 middleBar,
                 divider,
+                galleryNav,
             ])
         )
         
@@ -41,6 +43,8 @@ class ProfileDesignViewController: UIViewController {
             middleBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             divider.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
             divider.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            galleryNav.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            galleryNav.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
         ])
     }
 }
@@ -186,6 +190,30 @@ extension ProfileDesignViewController {
         divider.heightAnchor.constraint(equalToConstant: 0.5).isActive = true
         return divider
     }
+    
+    private func createGalleryNav() -> HStackView {
+        let galleryButton: UIButton = {
+            let button = UIButton(configuration: .plain(), primaryAction: .init(handler: { _ in
+                print("Grid")
+            }))
+            button.setImage(UIImage(named: "Grid"), for: .normal)
+            
+            return button
+        }()
+        
+        return HStackView(spacing: 0, alignment: .center, distribution: .fillEqually ,[
+            UIView(),
+            galleryButton,
+            UIView(),
+            UIView(),
+//            button2
+            UIView(),
+            UIView(),
+//            button3
+            UIView(),
+        ])
+    }
+    
 }
 
 //MARK: - Actions
