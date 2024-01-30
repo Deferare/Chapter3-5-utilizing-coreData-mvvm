@@ -18,16 +18,16 @@ class ProfileDesignViewController: UIViewController {
         let headerView = createHeaderView()
         let bioView = createBioView()
         let middleBar = createMiddleBar()
+        let divider = createDivider()
         
         view.addSubview(
             VStackView(spacing: 14, [
                 headerView,
                 bioView,
-                middleBar
+                middleBar,
+                divider,
             ])
         )
-        
-        
         
         NSLayoutConstraint.activate([
             view.subviews.first!.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 14),
@@ -39,6 +39,8 @@ class ProfileDesignViewController: UIViewController {
             bioView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             middleBar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             middleBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            divider.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            divider.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
         ])
     }
 }
@@ -176,6 +178,13 @@ extension ProfileDesignViewController {
             ]),
            moreButton
         ])
+    }
+    
+    private func createDivider() -> UIView {
+        let divider = UIView()
+        divider.backgroundColor = UIColor(red: 0.859, green: 0.859, blue: 0.859, alpha: 1)
+        divider.heightAnchor.constraint(equalToConstant: 0.5).isActive = true
+        return divider
     }
 }
 
