@@ -39,10 +39,6 @@ class MainViewController: UIViewController {
             view.subviews.first!.centerYAnchor.constraint(equalTo: view.centerYAnchor),
         ])
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
-    }
 }
 
 //MARK: - Views

@@ -49,26 +49,35 @@ class ProfileDesignViewController: UIViewController {
             galleryNav.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             galleryCollectionVC.view.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
             galleryCollectionVC.view.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            galleryCollectionVC.view.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
+            galleryCollectionVC.view.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0),
         ])
+    }
+    
+    private func setUpNeviBar() {
+        // 상단 네비 바
+        self.navigationItem.title = data?.userName
+        let menuIcon = UIImageView(image: UIImage(named: "Menu"))
+        menuIcon.layer.bounds.size = CGSize(width: 21, height: 17.5)
+        menuIcon.addGestureRecognizer(UITapGestureRecognizer(target: self, action: nil))
+        let rightItem = UIBarButtonItem(customView: menuIcon)
+        self.navigationItem.setRightBarButton(rightItem, animated: true)
+        view.backgroundColor = .systemBackground
         
+        // 하단 네비 바
+        let profileTabItem: UIBarButtonItem = {
+            let item = UIBarButtonItem(image: UIImage(named: "Profile - Fill"), style: .plain, target: nil, action: nil)
+            item.tintColor = .black
+            return item
+        }()
+        navigationController?.setToolbarHidden(false, animated: true)
+        navigationController?.toolbar.barTintColor = .clear
+        navigationController?.toolbar.backgroundColor = .systemBackground
+        setToolbarItems([.flexibleSpace(), profileTabItem, .flexibleSpace()], animated: true)
     }
 }
 
 //MARK: - Views
 extension ProfileDesignViewController {
-    private func setUpNeviBar() {
-        self.navigationItem.title = data?.userName
-        
-        let menuIcon = UIImageView(image: UIImage(named: "Menu"))
-        menuIcon.layer.bounds.size = CGSize(width: 21, height: 17.5)
-        menuIcon.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tappedMenu(_:))))
-        let rightItem = UIBarButtonItem(customView: menuIcon)
-        
-        self.navigationItem.setRightBarButton(rightItem, animated: true)
-        view.backgroundColor = .systemBackground
-    }
-    
     private func createHeaderView() -> HStackView {
         let profileImage: UIImageView = {
             let profileImage = UIImageView()

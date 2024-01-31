@@ -36,7 +36,7 @@ class GalleryCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for i in 1...10 {
+        for i in 1...9 {
             photoNames.append("picture-\(i)")
         }
     }
