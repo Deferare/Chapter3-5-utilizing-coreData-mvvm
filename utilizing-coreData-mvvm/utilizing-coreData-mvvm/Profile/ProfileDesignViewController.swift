@@ -9,10 +9,10 @@ import UIKit
 
 class ProfileDesignViewController: UIViewController {
     var data: Profile?
+    var galleryCollectionVC = GalleryCollectionViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setUpNeviBar()
         
         let headerView = createHeaderView()
@@ -22,19 +22,21 @@ class ProfileDesignViewController: UIViewController {
         let galleryNav = createGalleryNav()
         
         view.addSubview(
-            VStackView(spacing: 14, [
+            VStackView(spacing: 14, alignment: .fill, distribution: .fill ,[
                 headerView,
                 bioView,
                 middleBar,
                 divider,
                 galleryNav,
+                galleryCollectionVC.view
             ])
         )
-        
+
         NSLayoutConstraint.activate([
             view.subviews.first!.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 14),
             view.subviews.first!.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
             view.subviews.first!.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            view.subviews.first!.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
             headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -28),
             headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             bioView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -28),
@@ -45,7 +47,11 @@ class ProfileDesignViewController: UIViewController {
             divider.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             galleryNav.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
             galleryNav.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            galleryCollectionVC.view.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            galleryCollectionVC.view.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            galleryCollectionVC.view.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
         ])
+        
     }
 }
 
@@ -159,19 +165,16 @@ extension ProfileDesignViewController {
         }()
         
         let moreButton: UIButton = {
-            let button = UIButton(primaryAction: .init(handler: { action in
+            let button = UIButton(type: .custom, primaryAction: .init(handler: { _ in
                 
             }))
-            button.titleLabel?.font = .systemFont(ofSize: 14, weight: .bold)
-            button.tintColor = .black
-            button.setTitle("M", for: .normal)
+            button.setImage(UIImage(named: "More"), for: .normal)
             button.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
             button.layer.borderColor = UIColor(red: 0.855, green: 0.855, blue: 0.855, alpha: 1).cgColor
             button.layer.borderWidth = 1.5
             button.layer.cornerRadius = 4
             button.widthAnchor.constraint(equalToConstant: 30).isActive = true
             button.heightAnchor.constraint(equalToConstant: 30).isActive = true
-            
             return button
         }()
         
@@ -197,7 +200,6 @@ extension ProfileDesignViewController {
                 print("Grid")
             }))
             button.setImage(UIImage(named: "Grid"), for: .normal)
-            
             return button
         }()
         
@@ -213,7 +215,6 @@ extension ProfileDesignViewController {
             UIView(),
         ])
     }
-    
 }
 
 //MARK: - Actions
@@ -223,13 +224,6 @@ extension ProfileDesignViewController {
         print("tapped")
     }
 }
-
-
-
-
-
-
-
 
 @available(iOS 17, *)
 #Preview("", traits: .defaultLayout) {
@@ -246,8 +240,3 @@ extension ProfileDesignViewController {
     
     return mainNavi
 }
-
-
-
-
-

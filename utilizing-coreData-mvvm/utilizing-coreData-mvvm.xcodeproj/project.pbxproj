@@ -20,6 +20,8 @@
 		E034353E2B6308C000767007 /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E034353D2B6308C000767007 /* TodoViewController.swift */; };
 		E03435402B6308E200767007 /* TodoCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E034353F2B6308E200767007 /* TodoCompletedViewController.swift */; };
 		E03435442B6313BD00767007 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03435432B6313BD00767007 /* Profile.swift */; };
+		E06E19AE2B69A7FC00C3E0F5 /* GalleryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06E19AD2B69A7FC00C3E0F5 /* GalleryCollectionViewController.swift */; };
+		E06E19B02B69C9CA00C3E0F5 /* GalleryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06E19AF2B69C9CA00C3E0F5 /* GalleryCollectionCell.swift */; };
 		E0CD21F12B66FACA00EB9679 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CD21F02B66FACA00EB9679 /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +41,8 @@
 		E034353D2B6308C000767007 /* TodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
 		E034353F2B6308E200767007 /* TodoCompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCompletedViewController.swift; sourceTree = "<group>"; };
 		E03435432B6313BD00767007 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		E06E19AD2B69A7FC00C3E0F5 /* GalleryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewController.swift; sourceTree = "<group>"; };
+		E06E19AF2B69C9CA00C3E0F5 /* GalleryCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionCell.swift; sourceTree = "<group>"; };
 		E0CD21F02B66FACA00EB9679 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,6 +105,7 @@
 		E03435382B63079B00767007 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				E03435392B6307BE00767007 /* ProfileDesignViewController.swift */,
 				E03435412B63138100767007 /* Models */,
 				E03435422B63138D00767007 /* Views */,
 			);
@@ -134,7 +139,8 @@
 		E03435422B63138D00767007 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E03435392B6307BE00767007 /* ProfileDesignViewController.swift */,
+				E06E19AD2B69A7FC00C3E0F5 /* GalleryCollectionViewController.swift */,
+				E06E19AF2B69C9CA00C3E0F5 /* GalleryCollectionCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -217,9 +223,11 @@
 				E03435372B6302A600767007 /* VStackView.swift in Sources */,
 				E03435402B6308E200767007 /* TodoCompletedViewController.swift in Sources */,
 				E03435252B6301DD00767007 /* utilizing_coreData_mvvm.xcdatamodeld in Sources */,
+				E06E19AE2B69A7FC00C3E0F5 /* GalleryCollectionViewController.swift in Sources */,
 				E03435442B6313BD00767007 /* Profile.swift in Sources */,
 				E03435352B6302A600767007 /* HStackView.swift in Sources */,
 				E034351D2B6301DD00767007 /* SceneDelegate.swift in Sources */,
+				E06E19B02B69C9CA00C3E0F5 /* GalleryCollectionCell.swift in Sources */,
 				E0CD21F12B66FACA00EB9679 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,9 +9,11 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.tintColor = .label
+        title = ""
+        view.backgroundColor = .systemBackground
         
         view.addSubview(
             VStackView(spacing: 30, ([
@@ -36,10 +38,6 @@ class MainViewController: UIViewController {
             view.subviews.first!.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             view.subviews.first!.centerYAnchor.constraint(equalTo: view.centerYAnchor),
         ])
-        
-        self.navigationController?.navigationBar.tintColor = .label
-        self.title = ""
-        view.backgroundColor = .systemBackground
     }
     
     override func viewWillAppear(_ animated: Bool) {
